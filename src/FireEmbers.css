@@ -1,0 +1,78 @@
+.fire-embers-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.ember-particle {
+    position: absolute;
+    bottom: -10px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    animation:
+        spark-rise var(--rise-duration) ease-out infinite,
+        spark-drift var(--drift-duration) ease-in-out infinite alternate,
+        spark-flicker var(--flicker-duration) steps(2, jump-none) infinite;
+    animation-delay: var(--spark-delay);
+}
+
+/* Rising from bottom like sparks from a flame */
+@keyframes spark-rise {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(calc(-110vh - 20px));
+        opacity: 0;
+    }
+}
+
+/* Horizontal drift of sparks */
+@keyframes spark-drift {
+    0% {
+        translate: var(--drift-left) 0;
+    }
+
+    25% {
+        translate: var(--drift-right) 0;
+    }
+
+    50% {
+        translate: var(--drift-mid) 0;
+    }
+
+    75% {
+        translate: var(--drift-far) 0;
+    }
+
+    100% {
+        translate: var(--drift-end) 0;
+    }
+}
+
+/* Flickering glow — bright orange/yellow to dim */
+@keyframes spark-flicker {
+
+    0%,
+    100% {
+        background-color: var(--spark-color-bright);
+        box-shadow: 0 0 6px 2px var(--spark-glow);
+    }
+
+    50% {
+        background-color: var(--spark-color-dim);
+        box-shadow: 0 0 2px 1px var(--spark-glow-dim);
+    }
+}
