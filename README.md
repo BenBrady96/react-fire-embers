@@ -122,10 +122,11 @@ react-fire-embers/
 
 ## 📄 License
 
-MIT License — see [LICENSE](LICENSE) for details.
+MIT - see [LICENSE](LICENSE) for details.
 
 ---
 
 ## 📧 Contact
 
-**BenBrady96** — [GitHub](https://github.com/BenBrady96)
+- [GitHub](https://github.com/BenBrady96)
+- [LinkedIn](https://www.linkedin.com/in/ben-brady-b241642b4/)
